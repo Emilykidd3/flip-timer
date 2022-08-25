@@ -16,7 +16,10 @@ body {
     border-radius: .1em;
 }
 
-.top, .bottom {
+.top, 
+.bottom, 
+.flip-card.flip::after,
+.flip-card.flip::after {
     height: .75em;
     line-height: 1;
     padding: .25em;
@@ -39,9 +42,13 @@ body {
 }
 
 .flip-card::before {
-
+    position: absolute;
+    content: "5";
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
 }
 
 .flip-card::after {
-    
+
 }
