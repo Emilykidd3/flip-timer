@@ -25,7 +25,7 @@ body {
 }
 
 .top,
-.flip-card.flip::before {
+.flip-card.flip .bottom {
     background-color: #f7f7f7;
     border-top-right-radius: .1em;
     border-top-left-radius: .1em;
@@ -33,7 +33,7 @@ body {
 }
 
 .bottom,
-.flip-card.flip::after {
+.flip-card.flip .top {
     background-color: white;
     display: flex;
     align-items: flex-end;
@@ -41,7 +41,7 @@ body {
     border-bottom-left-radius: .1em;
 }
 
-.flip-card.flip::before {
+.flip-card.flip .bottom {
     position: absolute;
     content: attr(data-current-number);
     width: 100%;
@@ -55,7 +55,7 @@ body {
     }
 }
 
-.flip-card.flip::after {
+.flip-card.flip .top {
     position: absolute;
     bottom: 0;
     content: attr(data-next-number);
