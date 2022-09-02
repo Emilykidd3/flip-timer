@@ -12,6 +12,6 @@ flipCard.addEventListener("animationstart", e => {
     topHalf.textContent = startNumber - 1
 })
 flipCard.addEventListener("animationend", e => {
-    bottomHalf.textContent = startNumber - 1
+    bottom.textContent = startNumber - 1
 })
 flipCard.classList.add("flip");
