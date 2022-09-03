@@ -17,7 +17,7 @@ body {
     border-radius: .1em;
 }
 
-.top, .bottom, .flip-card.flip .top-flip, .flip-card .bottom-flip {
+.top, .bottom, .flip-card .top-flip, .flip-card .bottom-flip {
     height: .75em;
     line-height: 1;
     padding: .25em;
@@ -54,7 +54,7 @@ body {
     }
 }
 
-.flip-card.flip .bottom-flip {
+.flip-card .bottom-flip {
     position: absolute;
     bottom: 0;
     width: 100%;

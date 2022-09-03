@@ -2,9 +2,15 @@ const startNumber = 9
 const flipCard = document.querySelector(".flip-card")
 const topHalf = flipCard.querySelector(".top")
 const bottomHalf = flipCard.querySelector(".bottom")
+const topFlip = document.createElement('div')
+topFlip.classList.add('top-flip')
+const bottomFlip = document.createElement('div')
+bottomFlip.classList.add('bottom-flip')
 
 topHalf.textContent = startNumber
 bottomHalf.textContent = startNumber
+topFlip.textContent = startNumber
+bottomFlip.textContent = startNumber + 1
 
 flipCard.dataset.currentNumber = startNumber
 flipCard.dataset.nextNumber = startNumber - 1
@@ -14,4 +20,4 @@ flipCard.addEventListener("animationstart", e => {
 flipCard.addEventListener("animationend", e => {
     bottom.textContent = startNumber - 1
 })
-flipCard.classList.add("flip");
+flipCard.append(topFlip, bottomFlip);
