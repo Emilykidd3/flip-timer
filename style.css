@@ -54,7 +54,7 @@ body {
     }
 }
 
-.flip-card .bottom-flip {
+.flip-card .top-flip {
     position: absolute;
     bottom: 0;
     width: 100%;

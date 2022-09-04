@@ -10,14 +10,16 @@ bottomFlip.classList.add('bottom-flip')
 topHalf.textContent = startNumber
 bottomHalf.textContent = startNumber
 topFlip.textContent = startNumber
-bottomFlip.textContent = startNumber + 1
+bottomFlip.textContent = startNumber - 1
 
-flipCard.dataset.currentNumber = startNumber
-flipCard.dataset.nextNumber = startNumber - 1
-flipCard.addEventListener("animationstart", e => {
+topFlip.addEventListener("animationstart", e => {
     topHalf.textContent = startNumber - 1
 })
-flipCard.addEventListener("animationend", e => {
-    bottom.textContent = startNumber - 1
+topFlip.addEventListener("animationstart", e => {
+    topFlip.remove()
+})
+bottomFlip.addEventListener("animationend", e => {
+    bottomHalf.textContent = startNumber - 1
+    bottomFlip.remove()
 })
 flipCard.append(topFlip, bottomFlip);
