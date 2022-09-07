@@ -25,7 +25,7 @@ function flip(flipCard) {
     bottomFlip.addEventListener("animationend", e => {
         bottomHalf.textContent = startNumber - 1
         bottomFlip.remove()
-        flip(flipCard)
+        // flip(flipCard)
     })
     flipCard.append(topFlip, bottomFlip);
 }
