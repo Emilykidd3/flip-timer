@@ -2,6 +2,13 @@ const flipCard = document.querySelector(".flip-card")
 
 flip(flipCard)
 
+const countToDate = new Date("2022-04-02")
+setInterval(()=> {
+    const currentDate = new Date();
+    const timeBetweenDates = countToDate - currentDate
+    console.log(timeBetweenDates)
+}, 1000)
+
 function flip(flipCard) {
     const topHalf = flipCard.querySelector(".top")
     const bottomHalf = flipCard.querySelector(".bottom")
