@@ -1,20 +1,23 @@
-const flipCard = document.querySelector(".flip-card")
-
-flip(flipCard)
-
 const countToDate = new Date("2022-04-02")
 let previousTimeBetweenDates
 setInterval(()=> {
     const currentDate = new Date();
-    const timeBetweenDates = Math.ceil(currentDate -countToDate/1000)
+    const timeBetweenDates = Math.ceil((countToDate - currentDate)/1000)
     // console.log(Math.ceil(timeBetweenDates/1000))
 
     if (previousTimeBetweenDates !== timeBetweenDates) {
-        console.log("1 second passed")
+        flipAllCards(timeBetweenDates)
     }
 
     previousTimeBetweenDates = timeBetweenDates
 }, 250)
+
+function flipAllCards(time) {
+    const seconds = time % 60
+    const minutes = Math.floor(time / 60) % 60
+    const hours = Math.floor(time / 3600)
+    console.log(hours, minutes, seconds)
+}
 
 function flip(flipCard) {
     const topHalf = flipCard.querySelector(".top")
