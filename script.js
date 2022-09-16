@@ -3,11 +3,7 @@ let previousTimeBetweenDates
 setInterval(()=> {
     const currentDate = new Date();
     const timeBetweenDates = Math.ceil((countToDate - currentDate)/1000)
-    // console.log(Math.ceil(timeBetweenDates/1000))
-
-    if (previousTimeBetweenDates !== timeBetweenDates) {
-        flipAllCards(timeBetweenDates)
-    }
+    flipAllCards(timeBetweenDates)
 
     previousTimeBetweenDates = timeBetweenDates
 }, 250)
@@ -27,28 +23,30 @@ function flipAllCards(time) {
     console.log(hours, minutes, seconds)
 }
 
-function flip(flipCard) {
+function flip(flipCard, newNumber) {
     const topHalf = flipCard.querySelector(".top")
+    const startNumber = parseInt(topHalf.textContent)
+    if (newNumber === startNumber) return
+
     const bottomHalf = flipCard.querySelector(".bottom")
     const topFlip = document.createElement('div')
     topFlip.classList.add('top-flip')
     const bottomFlip = document.createElement('div')
     bottomFlip.classList.add('bottom-flip')
-    const startNumber = parseInt(topHalf.textContent)
 
     topHalf.textContent = startNumber
     bottomHalf.textContent = startNumber
     topFlip.textContent = startNumber
-    bottomFlip.textContent = startNumber - 1
+    bottomFlip.textContent = newNumber
 
     topFlip.addEventListener("animationstart", e => {
-        topHalf.textContent = startNumber - 1
+        topHalf.textContent = newNumber
     })
     topFlip.addEventListener("animationend", e => {
         topFlip.remove()
     })
     bottomFlip.addEventListener("animationend", e => {
-        bottomHalf.textContent = startNumber - 1
+        bottomHalf.textContent = newNumber
         bottomFlip.remove()
         // flip(flipCard)
     })
