@@ -19,8 +19,6 @@ function flipAllCards(time) {
     flip(document.querySelector("[data-minutes-ones]"), minutes % 10)
     flip(document.querySelector("[data-seconds-tens]"), Math.floor(seconds / 10))
     flip(document.querySelector("[data-seconds-ones]"), seconds % 10)
-
-    console.log(hours, minutes, seconds)
 }
 
 function flip(flipCard, newNumber) {
@@ -48,7 +46,6 @@ function flip(flipCard, newNumber) {
     bottomFlip.addEventListener("animationend", e => {
         bottomHalf.textContent = newNumber
         bottomFlip.remove()
-        // flip(flipCard)
     })
     flipCard.append(topFlip, bottomFlip);
 }
