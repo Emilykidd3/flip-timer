@@ -5,6 +5,7 @@
   }
   
   body {
+    margin-top: 10%;
     background-color: #f2f1ed;
     color: #de4848;
   }
@@ -92,4 +93,14 @@
   
   .segment-title {
     font-size: 1rem;
+  }
+
+  form label, form input {
+      font-size: .75rem;
+  }
+
+  form {
+      margin: 1em 0 0 0;
+      display: flex;
+      justify-content: center;
   }
