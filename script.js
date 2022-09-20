@@ -1,3 +1,6 @@
+var submitButton = document.querySelector("#submit-button")
+var timerTime = document.querySelector("#timer-time")
+
 const countToDate = new Date().setHours(new Date().getHours() + 1)
 let previousTimeBetweenDates
 setInterval(()=> {
@@ -49,3 +52,8 @@ function flip(flipCard, newNumber) {
     })
     flipCard.append(topFlip, bottomFlip);
 }
+
+submitButton.addEventListener("click", function(){
+    event.preventDefault();
+    console.log(timerTime.value)
+})
