@@ -53,11 +53,28 @@
       </div>
     </div>
     <div>
-        <form>
-            <label>Time:</label>
-            <input id="timer-time" type="text" id="time" name="time">
-            <input id="submit-button" type="submit" value="submit">
-        </form>
+      <form>
+        <!-- <label>Time:</label>
+        <input id="timer-time" type="text" id="time" name="time" />
+        <input id="submit-button" type="submit" value="submit" /> -->
+        <select id="minutes" name="minutes">
+            <label>minutes</label>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <label for="minutes">Minutes</label>
+        </select>
+        <select id="seconds" name="seconds">
+            <label>Seconds</label>
+          <option value="0">0</option>
+          <option value="15">15</option>
+          <option value="30">30</option>
+          <option value="45">45</option>
+          <label for="seconds">Seconds</label>
+          <input id="submit-button" type="submit" value="submit" />
+        </select>
+      </form>
     </div>
   </body>
 </html>
