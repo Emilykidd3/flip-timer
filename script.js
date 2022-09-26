@@ -1,5 +1,8 @@
 var submitButton = document.querySelector("#submit-button")
 var timerTime = document.querySelector("#timer-time")
+var userSecondsInput = document.querySelector('#seconds');
+var userMinutesInput = document.querySelector('#minutes');
+var userHoursInput = document.querySelector('#hours');
 
 const countToDate = new Date().setHours(new Date().getHours() + 1)
 let previousTimeBetweenDates
@@ -55,5 +58,8 @@ function flip(flipCard, newNumber) {
 
 submitButton.addEventListener("click", function(){
     event.preventDefault();
-    console.log()
+    var userSeconds = userSecondsInput.options[userSecondsInput.selectedIndex].value;
+    var userMinutes = userMinutesInput.options[userMinutesInput.selectedIndex].value;
+    var userHours = userHoursInput.options[userHoursInput.selectedIndex].value;
+    console.log(userHours + " hours " + userMinutes+ " minutes " + userSeconds + " seconds ")
 })
